@@ -11,7 +11,7 @@ import com.example.avaliacao001.model.DogsImages
 
 class AdapterDogs : RecyclerView.Adapter<ItemDogViewHolder>() {
 
-    private val listOfDogs = mutableListOf<DogsImages>()
+    private var listOfDogs : MutableList<DogsImages> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemDogViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_lista, parent, false)
@@ -27,6 +27,13 @@ class AdapterDogs : RecyclerView.Adapter<ItemDogViewHolder>() {
     override fun getItemCount(): Int {
         return listOfDogs.size
     }
+
+    fun update(newList: List<DogsImages>) {
+        listOfDogs = mutableListOf()
+        listOfDogs.addAll(newList)
+        notifyDataSetChanged()
+    }
+
 }
 
 class ItemDogViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -34,7 +41,7 @@ class ItemDogViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(dog: DogsImages) {
         itemView.findViewById<ImageView>(R.id.imageViewDog).apply {
             Glide.with(context)
-                .load(dog.mensagem)
+                .load(dog.imagem.url)
                 .placeholder(R.drawable.ic_launcher_background)
                 .into(this)
         }
