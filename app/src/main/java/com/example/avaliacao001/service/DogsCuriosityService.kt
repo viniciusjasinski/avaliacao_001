@@ -10,7 +10,4 @@ interface DogsCuriosityService {
     @GET("/api/v1/resources/dogs")
     fun getCuriosity(@Query("index") id_fact: Int?): Call<List<DogsCuriosity>>
 
-//    @GET("/api/v1/resources/dogs?index=1")
-//    fun getCuriosity(): Call<List<DogsCuriosity>>
-
 }

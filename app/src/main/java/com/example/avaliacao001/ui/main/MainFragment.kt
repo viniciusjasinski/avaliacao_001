@@ -24,7 +24,6 @@ class MainFragment : Fragment(R.layout.main_fragment), Callback<List<DogsImages>
         RetrofitBuilder.getDogsPhotosService().getAllPhotos()
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
