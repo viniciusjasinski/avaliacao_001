@@ -20,7 +20,7 @@ object RetrofitBuilder {
         .build()
 
     fun getDogsCuriosityService(): DogsCuriosityService {
-        return retrofitPhotos.create(DogsCuriosityService::class.java)
+        return retrofitCuriosity.create(DogsCuriosityService::class.java)
     }
 
 }

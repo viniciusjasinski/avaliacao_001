@@ -1,6 +1,7 @@
 package com.example.avaliacao001.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class DogsImages(
 
@@ -26,7 +27,7 @@ data class DogsImages(
     val referencia_id_imagem: String,
     @SerializedName("image")
     val imagem: Imagem,
-)
+) : Serializable
 
 
 data class Peso(

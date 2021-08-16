@@ -21,8 +21,7 @@ class MainFragment : Fragment(R.layout.main_fragment), Callback<List<DogsImages>
     lateinit var recyclerView: RecyclerView
 
     val call by lazy {
-        val service = RetrofitBuilder.getDogsPhotosService()
-        service.getAllPhotos()
+        RetrofitBuilder.getDogsPhotosService().getAllPhotos()
     }
 
     companion object {

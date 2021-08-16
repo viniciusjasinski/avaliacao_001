@@ -24,9 +24,9 @@ class AdapterDogs(
     override fun onBindViewHolder(holder: ItemDogViewHolder, position: Int) {
         listOfDogs[position].apply {
             holder.bind(this)
-            holder.itemView.findViewById<Button>(R.id.buttonSelectDog).apply {
-                setOnClickListener {
-                    clickDetalhes.onClickItemCuriosidade()
+            holder.itemView.findViewById<Button>(R.id.buttonSelectDog).let {
+                it.setOnClickListener {
+                    clickDetalhes.onClickItemCuriosidade(this)
                 }
             }
         }
@@ -50,7 +50,7 @@ class ItemDogViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         itemView.findViewById<ImageView>(R.id.imageViewDog).apply {
             Glide.with(context)
                 .load(dog.imagem.url)
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ic_baseline_mood_bad_24)
                 .into(this)
         }
     }

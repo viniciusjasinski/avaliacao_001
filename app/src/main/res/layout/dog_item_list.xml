@@ -23,17 +23,17 @@
 
             <ImageView
                 android:id="@+id/imageViewDog"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:layout_width="@dimen/default_size"
+                android:layout_height="@dimen/default_size"
                 android:layout_marginTop="@dimen/default_margin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/ic_baseline_mood_bad_24" />
+                android:src="@drawable/ic_baseline_mood_bad_24" />
 
             <Button
                 android:id="@+id/buttonSelectDog"
-                android:layout_width="250dp"
+                android:layout_width="@dimen/default_size"
                 android:textSize="16sp"
                 android:layout_marginTop="@dimen/default_margin"
                 android:layout_height="wrap_content"
@@ -42,7 +42,6 @@
                 app:layout_constraintTop_toBottomOf="@id/imageViewDog"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
