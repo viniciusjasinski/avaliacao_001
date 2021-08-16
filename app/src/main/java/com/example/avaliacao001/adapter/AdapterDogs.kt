@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.avaliacao001.R
@@ -26,7 +27,7 @@ class AdapterDogs(
             holder.bind(this)
             holder.itemView.findViewById<Button>(R.id.buttonSelectDog).let {
                 it.setOnClickListener {
-                    clickDetalhes.onClickItemCuriosidade(this)
+                    clickDetalhes.onClickItemCuriosidade(this.imagem.url)
                 }
             }
         }
@@ -50,8 +51,11 @@ class ItemDogViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         itemView.findViewById<ImageView>(R.id.imageViewDog).apply {
             Glide.with(context)
                 .load(dog.imagem.url)
-                .placeholder(R.drawable.ic_baseline_mood_bad_24)
+                .placeholder(R.drawable.ic_baseline_image_search_24)
                 .into(this)
+        }
+        itemView.findViewById<TextView>(R.id.textViewDogName).apply {
+            text = dog.nome
         }
     }
 

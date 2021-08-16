@@ -24,10 +24,6 @@ class MainFragment : Fragment(R.layout.main_fragment), Callback<List<DogsImages>
         RetrofitBuilder.getDogsPhotosService().getAllPhotos()
     }
 
-    companion object {
-        fun newInstance() = MainFragment()
-    }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -58,8 +54,8 @@ class MainFragment : Fragment(R.layout.main_fragment), Callback<List<DogsImages>
         println("Falhou")
     }
 
-    override fun onClickItemCuriosidade() {
-        (requireActivity() as? MainActivity)?.activityDetalhes()
+    override fun onClickItemCuriosidade(dogsImages: String) {
+        (requireActivity() as? MainActivity)?.activityDetalhes(dogsImages)
     }
 
 
