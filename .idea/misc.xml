@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/gradient_bg.xml" value="0.2824074074074074" />
         <entry key="app/src/main/res/drawable/ic_baseline_image_search_24.xml" value="0.2824074074074074" />
         <entry key="app/src/main/res/drawable/ic_baseline_mood_bad_24.xml" value="0.2824074074074074" />
         <entry key="app/src/main/res/layout/activity_detalhes.xml" value="0.26721014492753625" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.26721014492753625" />
+        <entry key="app/src/main/res/layout/background_gradient.xml" value="0.26721014492753625" />
         <entry key="app/src/main/res/layout/curiosity_item_list.xml" value="0.26721014492753625" />
         <entry key="app/src/main/res/layout/dog_item_list.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_detalhes.xml" value="0.26721014492753625" />
