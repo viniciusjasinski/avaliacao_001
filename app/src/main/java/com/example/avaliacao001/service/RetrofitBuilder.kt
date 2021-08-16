@@ -14,4 +14,13 @@ object RetrofitBuilder {
         return retrofitPhotos.create(DogsPhotosService::class.java)
     }
 
+    private val retrofitCuriosity = Retrofit.Builder()
+        .baseUrl("https://dog-facts-api.herokuapp.com")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
+    fun getDogsCuriosityService(): DogsCuriosityService {
+        return retrofitPhotos.create(DogsCuriosityService::class.java)
+    }
+
 }

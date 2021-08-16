@@ -1,5 +1,6 @@
 package com.example.avaliacao001
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.avaliacao001.ui.main.MainFragment
@@ -15,4 +16,11 @@ class MainActivity : AppCompatActivity() {
                 .commitNow()
         }
     }
+
+    fun activityDetalhes() {
+        Intent(this, DetalhesActivity::class.java).apply{
+            startActivity(this)
+        }
+    }
+
 }

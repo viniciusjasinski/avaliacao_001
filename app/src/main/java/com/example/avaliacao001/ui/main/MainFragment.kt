@@ -5,15 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.avaliacao001.MainActivity
 import com.example.avaliacao001.R
 import com.example.avaliacao001.adapter.AdapterDogs
+import com.example.avaliacao001.adapter.ClickableItem
 import com.example.avaliacao001.model.DogsImages
 import com.example.avaliacao001.service.RetrofitBuilder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainFragment : Fragment(R.layout.main_fragment), Callback<List<DogsImages>> {
+class MainFragment : Fragment(R.layout.main_fragment), Callback<List<DogsImages>>, ClickableItem {
 
     lateinit var adapter : AdapterDogs
     lateinit var recyclerView: RecyclerView
@@ -38,7 +40,7 @@ class MainFragment : Fragment(R.layout.main_fragment), Callback<List<DogsImages>
     }
 
     private fun geraLista(view: View) {
-        adapter = AdapterDogs()
+        adapter = AdapterDogs(this)
         recyclerView = view.findViewById(R.id.recyclerViewDogs)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
@@ -48,7 +50,6 @@ class MainFragment : Fragment(R.layout.main_fragment), Callback<List<DogsImages>
         call: Call<List<DogsImages>>,
         response: Response<List<DogsImages>>
     ) {
-        println("Sucesso arrombado")
         response.body()?.apply {
             adapter.update(this)
         }
@@ -56,6 +57,10 @@ class MainFragment : Fragment(R.layout.main_fragment), Callback<List<DogsImages>
 
     override fun onFailure(call: Call<List<DogsImages>>, t: Throwable) {
         println("Falhou")
+    }
+
+    override fun onClickItemCuriosidade() {
+        (requireActivity() as? MainActivity)?.activityDetalhes()
     }
 
 
